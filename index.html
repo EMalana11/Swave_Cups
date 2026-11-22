@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/icon.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2f4486" />
+    <meta name="description" content="Your neighborly coffee spot down the street in San Vicente, Canaman, Camarines Sur. Coffee, matcha, and a cat who thinks he owns the place." />
+    <title>Swave Cups Cafe · Canaman, Camsur</title>
+  </head>
+  <body>
+    <script>
+      // Apply the saved (or system) theme before first paint. The admin area is always light.
+      try {
+        var saved = localStorage.getItem("swave-theme");
+        var dark = saved ? saved === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+        if (dark && !location.pathname.startsWith("/admin")) document.documentElement.classList.add("dark");
+      } catch (e) {}
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

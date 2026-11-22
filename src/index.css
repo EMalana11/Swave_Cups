@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-fraunces: "Fraunces Variable";
+    --font-caveat: "Caveat Variable";
+    --font-work: "Work Sans Variable";
+  }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-cream font-sans text-ink antialiased; }
+  h1, h2, h3 { @apply font-serif; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-orange; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+}
+
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-solid { @apply bg-navy text-white hover:bg-navy-deep; }
+  .btn-orange { @apply bg-orange text-white hover:bg-orange-dark; }
+  .btn-line { @apply border border-navy/30 bg-white text-navy hover:border-navy hover:bg-navy/5; }
+  .btn-danger { @apply bg-red-600 text-white hover:bg-red-700; }
+  .btn-ghost { @apply text-navy hover:bg-navy/10; }
+  .btn-sm { @apply px-3 py-1.5 text-xs; }
+  .input { @apply w-full rounded-lg border border-line bg-white px-3 py-2 text-sm text-ink placeholder:text-muted/60 focus:border-navy focus:outline-none focus:ring-2 focus:ring-navy/20; }
+  .card { @apply rounded-2xl border border-line bg-white p-5 shadow-sm; }
+  .label { @apply mb-1 block text-sm font-medium text-ink; }
+  .th { @apply px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-muted; }
+  .td { @apply px-4 py-3 align-middle text-sm; }
+  .badge { @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium; }
+  .skeleton { @apply animate-pulse rounded-lg bg-line/70; }
+}
+
+
+/* Swave Cups dark theme. Toggled from the public header and remembered per device. */
+.dark body { background: #141820; color: #f5f0e7; color-scheme: dark; }
+.dark .bg-cream, .dark .bg-cream\/90, .dark .bg-cream\/95 { background-color: #171d28 !important; }
+.dark .bg-paper { background-color: #202735 !important; }
+.dark .bg-white, .dark .bg-white\/80, .dark .bg-white\/95 { background-color: #252e3d !important; }
+.dark .text-ink { color: #f5f0e7 !important; }
+.dark .text-navy { color: #c6d3ff !important; }
+.dark .text-muted { color: #b6bdc9 !important; }
+.dark .border-line { border-color: #3a4556 !important; }
+.dark .card { background-color: #202735; border-color: #3a4556; color: #f5f0e7; }
+.dark .input { background-color: #202735; border-color: #465267; color: #f5f0e7; }
+.dark .btn-line { background-color: #202735; color: #d7e0ff; border-color: #52617a; }
+.dark .btn-ghost { color: #d7e0ff; }
+.dark .bg-navy { background-color: #405b9f !important; }
+.dark .bg-navy-deep { background-color: #111722 !important; }
+.dark .text-white { color: #fff !important; }
+.dark .theme-toggle { background-color: #252e3d; color: #f3de7a; border-color: #52617a; }
+.dark .shadow-sm, .dark .shadow, .dark .shadow-lg, .dark .shadow-xl { --tw-shadow-color: rgb(0 0 0 / 0.28); }
+.dark .bg-amber-100 { background-color: #493a1c !important; color: #ffe7a1 !important; }
+.dark .text-amber-900 { color: #ffe7a1 !important; }
+.dark .bg-red-50 { background-color: #48282d !important; }
+.dark .text-red-800 { color: #ffc4c4 !important; }
+.dark input, .dark textarea, .dark select { color-scheme: dark; }
+.dark .sticky { scrollbar-color: #52617a #202735; }
+
+/* Full-menu page: fade behind the floating ORDER NOW button (follows light/dark). */
+.menu-fade { background: linear-gradient(to top, #fbf7ef 55%, rgba(251, 247, 239, 0)); }
+.dark .menu-fade { background: linear-gradient(to top, #141820 55%, rgba(20, 24, 32, 0)); }
